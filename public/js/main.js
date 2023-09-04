@@ -14,7 +14,6 @@ jQuery(function($) {
   // 名刺画像プレビュー処理
     // 画像が選択される度に、この中の処理が走る
     $('#name_card').on('change', function (ev) {
-        // このFileReaderが画像を読み込む上で大切
         const reader = new FileReader();
         // ファイル名を取得
         const fileName = ev.target.files[0].name;
