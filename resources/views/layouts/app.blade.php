@@ -69,4 +69,4 @@
         @yield('content')
 
     </main>
-    <script src="{{ asset('/js/fullcalendar.js') }}"></script>
+    <script src="{{ asset('/js/main.js') }}"></script>
