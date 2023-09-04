@@ -23,9 +23,9 @@ class CustomerRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'kana_name' => 'string|regex:/^[ァ-ヾ　〜ー]+$/u',
+            'kana_name' => 'nullable|string|regex:/^[ァ-ヾ　〜ー]+$/u',
             "address" => 'required',
-            'mail_address' => 'email:filter,dns',
+            'mail_address' => 'nullable|email:filter,dns',
             'key_person' => 'required',
         ];
     }
