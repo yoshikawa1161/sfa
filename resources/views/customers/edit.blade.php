@@ -88,7 +88,7 @@
 
             {{-- 名刺画像プレビュー表示 --}}
             <div class="text-cente  h-50">
-                <img id="name_card_img_prv" name="name_card_image_path" class="img-thumbnail h-50 w-50" src="{{ Storage::url($customer->img_path) }}">
+                <img id="name_card_img_prv" name="name_card_image_path" class="img-thumbnail h-50 w-50" src="{{ Storage::url($customer->img_path) }}" alt="名刺画像はありません">
             </div>
 
 
