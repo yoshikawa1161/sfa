@@ -4,8 +4,83 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Customer;
+use Illuminate\Support\Facades\Auth;
 
 class Matter extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['customer_id', 'user_id', 'expected_order_date', 'status', 'category', 'product_name'];
+
+
+
+    const STATUS = [
+        1 => ['label' => 'アプローチ'],
+        2 => ['label' => '面会'],
+        3 => ['label' => 'デモ'],
+        4 => ['label' => '最終面会'],
+    ];
+
+    const STATUSLIST = [
+        1 => ['label' => 'アプローチ'],
+        2 => ['label' => '面会'],
+        3 => ['label' => 'デモ'],
+        4 => ['label' => '最終面会'],
+        5 => ['label' => '受注確定'],
+        6 => ['label' => '納入'],
+
+    ];
+
+    const STATUS_APPROACH = 1;
+    const STATUS_MEETING = 2;
+    const STATUS_DEMO = 3;
+    const STATUS_FINAL_MEETING = 4;
+    const STATUS_ORDER = 5;
+    const STATUS_DELIVER = 6;
+
+    const CATEGORY = [
+        1 => ['label' => '自社更新'],
+        2 => ['label' => '他者更新'],
+        3 => ['label' => '新規'],
+    ];
+
+    public function getStatusLabelAttribute()
+    {
+        $status = $this->attributes['status'];
+
+        if (!isset(self::STATUS[$status])) {
+            return '';
+        }
+
+        return self::STATUS[$status]['label'];
+    }
+
+    public function getStatuslistLabelAttribute()
+    {
+        $statuslist = $this->attributes['status'];
+
+        if (!isset(self::STATUSLIST[$statuslist])) {
+            return '';
+        }
+
+        return self::STATUSLIST[$statuslist]['label'];
+    }
+
+    public function getCategoryLabelAttribute()
+    {
+        $category = $this->attributes['category'];
+
+        if (!isset(self::CATEGORY[$category])) {
+            return '';
+        }
+
+        return self::CATEGORY[$category]['label'];
+    }
+
+
+    public static function getMatterList()
+    {
+        return Matter::with('customer')->whereIn('status', [self::STATUS_APPROACH, self::STATUS_MEETING, self::STATUS_DEMO, self::STATUS_FINAL_MEETING])->where('user_id', Auth::user()->id)->get();
+    }
 }

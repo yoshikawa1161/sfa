@@ -80,7 +80,7 @@
             <div class="row mb-3">
                 <label for="name_card" class="col-sm-2 control-label">{{ __('名刺') }}</label>
                 <div class="col-sm-4 p-0">
-                    <input id="name_card" type="file" class="form-control" accept="image/*" name="name_card_image_path" onchange="setImage" value="a">
+                    <input id="name_card" type="file" class="form-control" accept="image/*" name="name_card_image_path" onchange="setImage">
                     <input type="hidden" name="name_card_image_path" value="{{$customer->img_path}}">
                 </div>
             </div>

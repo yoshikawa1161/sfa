@@ -22,4 +22,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/customers/{customer}/edit', [App\Http\Controllers\CustomerController::class, 'edit'])->name('customers.edit');
     Route::patch('/customers/{customer}', [App\Http\Controllers\CustomerController::class, 'update'])->name('customers.update');
     Route::delete('/customers/{customer}', [App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
+
+
+    Route::get('/matters', [App\Http\Controllers\MatterController::class, 'index'])->name('matters.index');
+    Route::get('/matters/create_first', [App\Http\Controllers\MatterController::class, 'create_first'])->name('matters.create_first');
+    Route::get('/matters/{customer}/create', [App\Http\Controllers\MatterController::class, 'create'])->name('matters.create');
+    Route::get('/matters/customer_select', [App\Http\Controllers\MatterController::class, 'customer_select'])->name('matters.customer_select');
+    Route::post('/matters', [App\Http\Controllers\MatterController::class, 'store'])->name('matters.store');
 });

@@ -53,6 +53,18 @@
                     </div>
                 </li>
 
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-hasapoup="true" aria-expanded="false">
+                        案件
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{route('matters.create_first')}}">案件登録</a>
+                        <a class="dropdown-item" href="{{route('matters.index')}}">案件リスト</a>
+
+                    </div>
+                </li>
+
         </div>
 
         <form action="{{route('logout')}}" method="post" onsubmit="return confirm('ログアウトしますか？')">

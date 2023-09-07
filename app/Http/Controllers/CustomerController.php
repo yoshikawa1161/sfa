@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
-use App\Http\Requests\CustomerRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\CustomerRequest;
+use Illuminate\Support\Facades\Storage;
+
 
 class CustomerController extends Controller
 {
