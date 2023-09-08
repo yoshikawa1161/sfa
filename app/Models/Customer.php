@@ -10,4 +10,9 @@ class Customer extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'kana_name', 'address', 'lat', 'lng', 'mail_address', 'phone_number', 'key_person', 'memo', 'img_path'];
+
+    public function matters()
+    {
+        return $this->hasMany('App\Models\Matter');
+    }
 }

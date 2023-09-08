@@ -23,10 +23,19 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('/customers/{customer}', [App\Http\Controllers\CustomerController::class, 'update'])->name('customers.update');
     Route::delete('/customers/{customer}', [App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
 
-
     Route::get('/matters', [App\Http\Controllers\MatterController::class, 'index'])->name('matters.index');
     Route::get('/matters/create_first', [App\Http\Controllers\MatterController::class, 'create_first'])->name('matters.create_first');
     Route::get('/matters/{customer}/create', [App\Http\Controllers\MatterController::class, 'create'])->name('matters.create');
     Route::get('/matters/customer_select', [App\Http\Controllers\MatterController::class, 'customer_select'])->name('matters.customer_select');
     Route::post('/matters', [App\Http\Controllers\MatterController::class, 'store'])->name('matters.store');
+    Route::get('/matters/{matter}/edit', [App\Http\Controllers\MatterController::class, 'edit'])->name('matters.edit');
+    Route::patch('/matters/{matter}', [App\Http\Controllers\MatterController::class, 'update'])->name('matters.update');
+    Route::delete('/matters/{matter}', [App\Http\Controllers\MatterController::class, 'destroy'])->name('matters.destroy');
+    Route::patch('/matters/{matter}/order_status', [App\Http\Controllers\MatterController::class, 'order_status'])->name('matters.order_status');
+    Route::get('/matters/order_list', [App\Http\Controllers\MatterController::class, 'order_list'])->name('matters.order_list');
+    Route::patch('/matters/{matter}/delivery_status', [App\Http\Controllers\MatterController::class, 'delivery_status'])->name('matters.delivery_status');
+    Route::get('/matters/delivery_list', [App\Http\Controllers\MatterController::class, 'delivery_list'])->name('matters.delivery_list');
+    Route::get('/matters/delivery/{matter}', [App\Http\Controllers\MatterController::class, 'delivery'])->name('matters.delivery');
+
+    Route::patch('/matters/{matter}/delivery_cancel', [App\Http\Controllers\MatterController::class, 'delivery_cancel'])->name('matters.delivery_cancel');
 });

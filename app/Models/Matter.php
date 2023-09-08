@@ -11,7 +11,18 @@ class Matter extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['customer_id', 'user_id', 'expected_order_date', 'status', 'category', 'product_name'];
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
+    protected $fillable = ['customer_id', 'user_id', 'expected_order_date', 'status', 'category', 'product_name', 'order_date', 'delivery_date'];
 
 
 
@@ -82,5 +93,13 @@ class Matter extends Model
     public static function getMatterList()
     {
         return Matter::with('customer')->whereIn('status', [self::STATUS_APPROACH, self::STATUS_MEETING, self::STATUS_DEMO, self::STATUS_FINAL_MEETING])->where('user_id', Auth::user()->id)->get();
+    }
+    public static function getOrderList()
+    {
+        return Matter::with('customer')->where('status', self::STATUS_ORDER)->get();
+    }
+    public static function getDeliveryList()
+    {
+        return Matter::with('customer')->where('status', self::STATUS_DELIVER)->get();
     }
 }

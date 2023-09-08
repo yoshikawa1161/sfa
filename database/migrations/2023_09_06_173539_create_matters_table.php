@@ -20,8 +20,8 @@ return new class extends Migration
             $table->integer('status');
             $table->integer('category');
             $table->string('product_name');
-            $table->date('order_date')->nullable;
-            $table->date('delivery_date')->nullable;
+            $table->date('order_date');
+            $table->date('delivery_date');
             $table->timestamps();
         });
     }

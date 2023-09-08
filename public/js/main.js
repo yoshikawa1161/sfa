@@ -50,3 +50,18 @@ jQuery(function($) {
         reader.readAsDataURL(this.files[0]);
     })
   
+
+
+  //活動日付などのinputカレンダー
+  flatpickr(document.getElementsByClassName('calendar'), {
+    locale: 'ja',
+    dateFormat: "Y-m-d H:i",
+    enableTime: true
+  });
+
+
+  //受注予定日のinputカレンダー
+  flatpickr(document.getElementsByClassName('calendar_date'), {
+  locale: 'ja',
+  dateFormat: "Y-m-d",
+  });
