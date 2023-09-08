@@ -88,11 +88,20 @@ class MatterController extends Controller
     {
         $matter->status = $request->status;
         $matter->save();
+        $data = ['matter' => $matter];
+        return view('matters.order_status', $data);
+    }
+
+    public function order_date(Request $request, Matter $matter)
+    {
+        $matter->order_date = $request->order_date;
+        $matter->save();
         return redirect(route('matters.order_list'));
     }
 
-    public function order_list()
+    public function order_list(Request $request, Matter $matter)
     {
+
         $matters = Matter::getOrderList();
 
         $data = ['matters' => $matters];
