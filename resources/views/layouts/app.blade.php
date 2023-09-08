@@ -61,7 +61,8 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('matters.create_first')}}">案件登録</a>
                         <a class="dropdown-item" href="{{route('matters.index')}}">案件リスト</a>
-
+                        <a class="dropdown-item" href="{{route('matters.order_list')}}">受注リスト</a>
+                        <a class="dropdown-item" href="{{route('matters.delivery_list')}}">納入リスト</a>
                     </div>
                 </li>
 
