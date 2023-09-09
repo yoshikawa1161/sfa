@@ -20,6 +20,7 @@
 
     <form class="form-horizontal form-search" action="{{route('matters.order_date',$matter)}}" method="post" onsubmit="return confirm('この内容に変更しますか？')">
         @csrf
+        @method('patch')
         <div class="row">
             <div class="col-sm-12">
                 <h3><i class="far fa-building"></i>【顧客情報】</h3>

@@ -126,6 +126,7 @@ return [
         'expected_order_date' => '受注予定日',
         'description' => '内容',
         'name_card_image_path' => '名刺画像',
+        'order_date' => '受注確定日',
 
     ],
 ];

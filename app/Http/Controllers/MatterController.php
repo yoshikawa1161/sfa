@@ -84,16 +84,18 @@ class MatterController extends Controller
         $matter->delete();
         return redirect(route('matters.index'));
     }
-    public function order_status(Request $request, Matter $matter)
+    public function order_status(Matter $matter)
     {
-        $matter->status = $request->status;
-        $matter->save();
         $data = ['matter' => $matter];
         return view('matters.order_status', $data);
     }
 
     public function order_date(Request $request, Matter $matter)
     {
+        $this->validate($request, [
+            'order_date' => 'required'
+        ]);
+        $matter->status = \App\Models\Matter::STATUS_ORDER;
         $matter->order_date = $request->order_date;
         $matter->save();
         return redirect(route('matters.order_list'));

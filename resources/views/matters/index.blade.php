@@ -39,11 +39,8 @@
                             </form>
                         </td>
                         <td>
-                            <form action="{{route('matters.order_status',$matter)}}" method="post" onsubmit="return confirm('受注確定を行いますか?')">
+                            <form action="{{route('matters.order_status',$matter)}}" method="get" onsubmit="return confirm('受注確定を行いますか?')">
                                 <input class="btn btn-danger" type="submit" onClick="return check()" value="受注確定">
-                                <input type="hidden" name="status" value=5>
-                                @csrf
-                                @method('patch')
                             </form>
                         </td>
                     </tr>
