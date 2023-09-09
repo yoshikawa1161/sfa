@@ -51,12 +51,10 @@ class ReportController extends Controller
         return redirect(route('reports.index'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Report $report)
+    public function setReports(Request $request)
     {
-        //
+        $result = Report::getCustomerName();
+        echo json_encode($result);
     }
 
     /**

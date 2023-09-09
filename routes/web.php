@@ -46,4 +46,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/reports/matter_select', [App\Http\Controllers\ReportController::class, 'matter_select'])->name('reports.matter_select');
     Route::get('/reports/{matter}/create', [App\Http\Controllers\ReportController::class, 'create'])->name('reports.create');
     Route::patch('/reports/{matter}/', [App\Http\Controllers\ReportController::class, 'store'])->name('reports.store');
+    Route::get('/setReports', [App\Http\Controllers\ReportController::class, 'setReports'])->name('reports.setReports');
 });
