@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
+            $table->integer('matter_id')->unsigned();
+            $table->foreign('matter_id')->references('id')->on('matters')->onDelete('cascade');
+            $table->string('description');
+            $table->datetime('start');
+            $table->datetime('end');
+            $table->integer('status');
+            $table->integer('category');
+            $table->string('product_name');
             $table->timestamps();
         });
     }
