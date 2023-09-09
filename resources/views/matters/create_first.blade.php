@@ -29,7 +29,7 @@
         <div class="row">
             <label for="name" class="col-sm-2 control-label">顧客名</label>
             <div class="col-sm-4 p-0">
-                <input type="text" id="name" name="name" class="form-control" onchange="set_date_to();" disabled>
+                <input type="text" id="name" name="name" class="form-control" onchange="set_date_to();">
             </div>
 
             <div class="col-sm-2">

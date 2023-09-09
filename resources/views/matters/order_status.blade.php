@@ -29,7 +29,7 @@
         <div class="row">
             <label for="name" class="col-sm-2 control-label">顧客名</label>
             <div class="col-sm-4 p-0">
-                <input type="text" id="name" name="name" value="{{$matter->customer->name}}" class="form-control" readonly>
+                <input type="text" id="name" name="name" value="{{$matter->customer->name}}" class="form-control" disabled>
                 <input type="hidden" name="customer_id" value="{{$matter->customer->id}}">
             </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="row">
             <label for="expected_order_date" class="col-sm-2 control-label">受注予定日</label>
             <div class="col-sm-2 p-0">
-                <input type="text" name="expected_order_date" value="{{$matter->expected_order_date}}" class="calendar_date form-control">
+                <input type="text" name="expected_order_date" value="{{$matter->expected_order_date}}" class="form-control" disabled>
             </div>
         </div>
 
@@ -57,9 +57,9 @@
         <div class="row">
             <label for="status" class="col-sm-2 control-label form-label">ステータス</label>
             <div class="col-sm-2 p-0">
-                <select class="form-control" name="status" id="status">
+                <select class="form-control" name="status" id="status" disabled>
                     @foreach(\App\Models\Matter::STATUS as $key=>$val)
-                    <option value="{{$key}}" @if($matter->status==$key) selected @endif readonly>
+                    <option value="{{$key}}" @if($matter->status==$key) selected @endif>
                         {{$val['label']}}
                     </option>
                     @endforeach
@@ -68,9 +68,9 @@
 
             <label for="category" class="col-sm-2 control-label">更新区分</label>
             <div class="col-sm-2 p-0">
-                <select class="form-control" name="category" id="category">
+                <select class="form-control" name="category" id="category" disabled>
                     @foreach(\App\Models\Matter::CATEGORY as $key=>$val)
-                    <option value="{{$key}}" @if($matter->category==$key) selected @endif readonly>
+                    <option value="{{$key}}" @if($matter->category==$key) selected @endif>
                         {{$val['label']}}
                     </option>
                     @endforeach
@@ -84,7 +84,7 @@
         <div class="row">
             <label for="puroduct_name" class="col-sm-2 control-label">商品名</label>
             <div class="col-sm-4 p-0">
-                <input type="text" name="product_name" class="form-control" value="{{$matter->product_name}}" readonly>
+                <input type="text" name="product_name" class="form-control" value="{{$matter->product_name}}" disabled>
             </div>
         </div>
 

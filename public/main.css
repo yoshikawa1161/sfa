@@ -142,7 +142,6 @@ html {
       border: 1px solid #eee !important; 
       border-radius:0 !important;
       margin-right: 0 !important;
-      background: none;
       box-shadow: none;
       -webkit-box-shadow: none;
   }
@@ -157,7 +156,6 @@ html {
       border: 1px solid #eee !important; 
       border-radius:0 !important;
       margin-right: 0 !important;
-      background: none;
       box-shadow: none;
       -webkit-box-shadow: none;
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
@@ -206,7 +204,7 @@ html {
   .fc-day{
     cursor: pointer;
   }
-  
+
   
   table.datatable2 td {
       table-layout: fixed;
