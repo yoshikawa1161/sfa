@@ -65,3 +65,92 @@ jQuery(function($) {
   locale: 'ja',
   dateFormat: "Y-m-d",
   });
+
+
+  //カレンダー処理
+    
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+      defaultView: 'dayGridMonth',
+      //カレンダーを月ごとに表示
+      editable: true,
+      //イベント編集
+      firstDay : 1,
+      //秋の始まりを設定。1→月曜日。defaultは0(日曜日)
+      eventDurationEditable : false,
+      //イベントの期間変更
+      selectLongPressDelay:0,
+      // スマホでタップしたとき即反応
+      events:"/setReports",
+ 
+      initialView: 'dayGridMonth',
+      locale: 'ja',
+      height: 'auto',
+      firstDay: 1,
+      headerToolbar: {
+        left: "dayGridMonth,listMonth",
+        center: "title",
+        right: "today prev,next"
+      },
+      buttonText: {
+        today: '今月',
+        month: '月',
+        list: 'リスト'
+      },
+
+      eventStartEditable: false,
+
+    
+      selectable: true,
+      select: function(info){
+        var first=info.startStr;
+        document.location.href="/reports/matter_select/?start="+encodeURIComponent(first);
+      },
+
+
+
+
+      eventClick:function(info){
+        var id=info.event.id;
+        document.location.href="/reports/edit/"+encodeURIComponent(id);
+
+      },
+  });
+  calendar.render();
+});
+
+
+
+
+
+
+function addEvent(calendar,info){
+
+
+
+  $.ajax({
+      url: '/reports/matter_select',
+      type: 'POST',
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+      dataTape: 'json',
+      data:{
+          // 日程取得
+          start:info.dateStr
+
+      }
+  })
+}
+
+
+
+function formatDate(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var newDate = year + '-' + month + '-' + day;
+  return newDate;
+}

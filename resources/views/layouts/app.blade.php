@@ -33,7 +33,6 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
@@ -65,6 +64,8 @@
                         <a class="dropdown-item" href="{{route('matters.delivery_list')}}">納入リスト</a>
                     </div>
                 </li>
+
+                <li class="nav-item"><a class="nav-link" href="{{route('reports.index')}}">日報</a></li>
 
         </div>
 

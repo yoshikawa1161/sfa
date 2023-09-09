@@ -40,4 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/matters/delivery/{matter}', [App\Http\Controllers\MatterController::class, 'delivery'])->name('matters.delivery');
 
     Route::patch('/matters/{matter}/delivery_cancel', [App\Http\Controllers\MatterController::class, 'delivery_cancel'])->name('matters.delivery_cancel');
+
+
+    Route::get('/reports', [App\Http\Controllers\ReportController::class, 'index'])->name('reports.index');
 });
