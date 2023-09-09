@@ -37,11 +37,11 @@
 
 
         <div class="row">
-            <h3><i class="far fa-calendar-alt"></i>【注文情報】</h3>
+            <h3><i class="far fa-calendar-alt"></i>【受注情報】</h3>
         </div>
 
         <div class="row">
-            <label for="expected_order_date" class="col-sm-2 control-label">注文予定日</label>
+            <label for="expected_order_date" class="col-sm-2 control-label">受注予定日</label>
             <div class="col-sm-2 p-0">
                 <input type="text" name="expected_order_date" value="{{$matter->expected_order_date}}" class="calendar_date form-control">
             </div>

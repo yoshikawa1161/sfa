@@ -14,7 +14,7 @@
                 <thead>
                     <tr class="bg-success">
                         <th>顧客名</th>
-                        <th>注文予定日</th>
+                        <th>受注予定日</th>
                         <th>商談ステータス</th>
                         <th>更新区分</th>
                         <th>商品名</th>
