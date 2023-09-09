@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row ml-20">
         <div class="col-sm-4">
-            <h2>受注確定日設定</h2>
+            <h2>納品日設定</h2>
         </div>
     </div>
 
@@ -18,7 +18,7 @@
     @endif
 
 
-    <form class="form-horizontal form-search" action="{{route('matters.order_date',$matter)}}" method="post" onsubmit="return confirm('この内容に変更しますか？')">
+    <form class="form-horizontal form-search" action="{{route('matters.delivery_date',$matter)}}" method="post" onsubmit="return confirm('この内容に変更しますか？')">
         @csrf
         @method('patch')
         <div class="row">
@@ -41,17 +41,16 @@
         </div>
 
         <div class="row">
-            <label for="expected_order_date" class="col-sm-2 control-label">受注予定日</label>
+            <label for="expected_order_date" class="col-sm-2 control-label">受注確定日</label>
             <div class="col-sm-2 p-0">
-                <input type="text" name="expected_order_date" value="{{$matter->expected_order_date}}" class="form-control" disabled>
+                <input type="text" name="order_date" value="{{$matter->order_date}}" class="calendar_date form-control" disabled>
             </div>
         </div>
 
-
         <div class="row">
-            <label for="expected_order_date" class="col-sm-2 control-label">受注確定日</label>
+            <label for="expected_order_date" class="col-sm-2 control-label">納品日</label>
             <div class="col-sm-2 p-0">
-                <input type="text" name="order_date" class="calendar_date form-control">
+                <input type="text" name="delivery_date" class="calendar_date form-control">
             </div>
         </div>
 

@@ -127,6 +127,7 @@ return [
         'description' => '内容',
         'name_card_image_path' => '名刺画像',
         'order_date' => '受注確定日',
+        'delivery_date' => '納入日',
 
     ],
 ];

@@ -34,7 +34,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/matters/{matter}/order_status', [App\Http\Controllers\MatterController::class, 'order_status'])->name('matters.order_status');
     Route::patch('/matters/{matter}/order_date', [App\Http\Controllers\MatterController::class, 'order_date'])->name('matters.order_date');
     Route::get('/matters/order_list', [App\Http\Controllers\MatterController::class, 'order_list'])->name('matters.order_list');
-    Route::patch('/matters/{matter}/delivery_status', [App\Http\Controllers\MatterController::class, 'delivery_status'])->name('matters.delivery_status');
+    Route::get('/matters/{matter}/delivery_status', [App\Http\Controllers\MatterController::class, 'delivery_status'])->name('matters.delivery_status');
+    Route::patch('/matters/{matter}/delivery_date', [App\Http\Controllers\MatterController::class, 'delivery_date'])->name('matters.delivery_date');
     Route::get('/matters/delivery_list', [App\Http\Controllers\MatterController::class, 'delivery_list'])->name('matters.delivery_list');
     Route::get('/matters/delivery/{matter}', [App\Http\Controllers\MatterController::class, 'delivery'])->name('matters.delivery');
 

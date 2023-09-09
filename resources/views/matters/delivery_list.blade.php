@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row ml-20">
         <div class="col-sm-4">
-            <h2>受注確定リスト</h2>
+            <h2>納入リスト</h2>
         </div>
     </div>
     <div class="row mt-20">
@@ -14,11 +14,11 @@
                 <thead>
                     <tr class="bg-success">
                         <th>顧客名</th>
-                        <th>受注確定日</th>
-                        <th>更新区分</th>
                         <th>商品名</th>
+                        <th>納入日</th>
+                        <th>更新区分</th>
                         <th>日報</th>
-                        <th>納入済み</th>
+                        <th>納入</th>
                     </tr>
                 </thead>
 
@@ -26,15 +26,20 @@
                     @foreach($matters as $matter)
                     <tr>
                         <td>{{$matter->customer->name}}</td>
-                        <td>{{$matter->order_date}}</td>
-                        <td>{{$matter->category_label}}</td>
                         <td>{{$matter->product_name}}</td>
+                        <td>{{$matter->delivery_date}}</td>
+                        <td>{{$matter->category_label}}</td>
 
+                        @can('delivery_list',$matter)
                         <td>
-                            <form action="{{route('matters.delivery_status',$matter)}}" method="get">
-                                <input class="btn btn-warning" type="submit" onClick="return check()" value="登録">
+                            <form action="{{route('matters.delivery_cancel',$matter)}}" method="post" onsubmit="return confirm('納入取消を行いますか?')">
+                                <input class="btn btn-danger" type="submit" onClick="return check()" value="取消">
+                                <input type="hidden" name="status" value="5">
+                                @csrf
+                                @method('patch')
                             </form>
                         </td>
+                        @endcan
                     </tr>
                     @endforeach
                 </tbody>
@@ -42,16 +47,5 @@
         </div>
     </div>
 </div>
-
-<script>
-    function check() {
-        var result = window.confirm('納入済みに登録しますか？');
-        if (result) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-</script>
 
 @endsection()

@@ -109,4 +109,28 @@ class MatterController extends Controller
         $data = ['matters' => $matters];
         return view('matters.order_list', $data);
     }
+
+    public function delivery_status(Request $request, Matter $matter)
+    {
+        $data = ['matter' => $matter];
+        return view('matters.delivery_status', $data);
+    }
+
+    public function delivery_date(Request $request, Matter $matter)
+    {
+        $this->validate($request, [
+            'delivery_date' => 'required'
+        ]);
+        $matter->status = \App\Models\Matter::STATUS_DELIVER;
+        $matter->delivery_date = $request->delivery_date;
+        $matter->save();
+        return redirect(route('matters.delivery_list'));
+    }
+
+    public function delivery_list()
+    {
+        $matters = Matter::getDeliveryList();
+        $data = ['matters' => $matters];
+        return view('matters.delivery_list', $data);
+    }
 }
