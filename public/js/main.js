@@ -76,13 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
       defaultView: 'dayGridMonth',
       //カレンダーを月ごとに表示
       editable: true,
-      //イベント編集
+
       firstDay : 1,
-      //秋の始まりを設定。1→月曜日。defaultは0(日曜日)
+
       eventDurationEditable : false,
-      //イベントの期間変更
+
       selectLongPressDelay:0,
-      // スマホでタップしたとき即反応
+
       events:"/setReports",
  
       initialView: 'dayGridMonth',
@@ -100,16 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
         list: 'リスト'
       },
 
-      eventStartEditable: false,
-
     
       selectable: true,
       select: function(info){
         var first=info.startStr;
         document.location.href="/reports/matter_select/?start="+encodeURIComponent(first);
       },
-
-
 
 
       eventClick:function(info){
