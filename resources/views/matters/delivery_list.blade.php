@@ -18,7 +18,6 @@
                         <th>納入日</th>
                         <th>更新区分</th>
                         <th>日報</th>
-                        <th>納入</th>
                     </tr>
                 </thead>
 
