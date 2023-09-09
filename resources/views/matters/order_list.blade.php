@@ -14,7 +14,7 @@
                 <thead>
                     <tr class="bg-success">
                         <th>顧客名</th>
-                        <th>受注予定日</th>
+                        <th>受注確定日</th>
                         <th>更新区分</th>
                         <th>商品名</th>
                         <th>日報</th>
@@ -26,7 +26,7 @@
                     @foreach($matters as $matter)
                     <tr>
                         <td>{{$matter->customer->name}}</td>
-                        <td>{{$matter->expected_order_date}}</td>
+                        <td>{{$matter->order_date}}</td>
                         <td>{{$matter->category_label}}</td>
                         <td>{{$matter->product_name}}</td>
 
