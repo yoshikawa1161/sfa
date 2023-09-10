@@ -51,4 +51,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('/reports/{report}/{matter}', [App\Http\Controllers\ReportController::class, 'update'])->name('reports.update');
     Route::delete('/reports/{report}', [App\Http\Controllers\ReportController::class, 'destroy'])->name('reports.destroy');
     Route::get('/reports/{matter}', [App\Http\Controllers\ReportController::class, 'reports_list'])->name('reports.list');
+
+    Route::get('/delivery_map', [App\Http\Controllers\MapController::class, 'delivery_map'])->name('maps.delivery_map');
 });
