@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         list: 'リスト'
       },
 
+      eventStartEditable: false,
     
       selectable: true,
       select: function(info){

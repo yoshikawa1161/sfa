@@ -27,7 +27,7 @@
         <div class="row">
             <label for="name" class="col-sm-2 control-label">顧客名</label>
             <div class="col-sm-4 p-0">
-                <input type="text" id="name" name="name" value="{{$matter->customer->name}}" class="form-control" readonly>
+                <input type="text" id="name" name="name" value="{{$matter->customer->name}}" class="form-control" disabled>
                 <input type=hidden name="customer_id" value="{{$matter->customer_id}}">
             </div>
         </div>
@@ -52,7 +52,7 @@
             <label for="status" class="col-sm-2 control-label form-label">ステータス</label>
             <div class="col-sm-2 p-0">
                 @if($matter->status==\App\Models\Matter::STATUS_ORDER||$matter->status==\App\Models\Matter::STATUS_DELIVER)
-                <input type="text" class="form-control" value="{{$matter->statuslist_label}}" readonly>
+                <input type="text" class="form-control" value="{{$matter->statuslist_label}}" disabled>
                 <input type="hidden" name=status value="{{$matter->status}}">
                 @else
                 <select class="form-control" name="status" id="status">

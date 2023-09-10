@@ -39,16 +39,11 @@ class ReportController extends Controller
      */
     public function store(ReportRequest $request, Matter $matter)
     {
-
-        $matter->status = $request->status;
-        $matter->category = $request->category;
-        $matter->product_name = $request->product_name;
-        $matter->save();
-
         $report = new Report();
         $form = $request->all();
         unset($form['_token']);
         $report->fill($form)->save();
+        $matter->fill($form)->save();
         return redirect(route('reports.index'));
     }
 
