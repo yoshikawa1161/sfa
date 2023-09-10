@@ -21,6 +21,11 @@ class Matter extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function reports()
+    {
+        return $this->hasMany(Report::class);
+    }
+
 
     protected $fillable = ['customer_id', 'user_id', 'expected_order_date', 'status', 'category', 'product_name', 'order_date', 'delivery_date'];
 
