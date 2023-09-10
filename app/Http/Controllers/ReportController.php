@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Report;
 use App\Models\Matter;
 use Illuminate\Http\Request;
@@ -60,9 +61,20 @@ class ReportController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Report $report)
+    public function edit(Report $report, Request $request)
     {
-        //
+
+        $matter = Matter::whereHas('reports', function ($query) use ($report) {
+            $query->where('id', $report->id);
+        })->get();
+
+        $customerName = customer::with('matters.reports')
+            ->whereHas('matters.reports', function ($query) use ($report) {
+                return $query->where('id', $report->id);
+            })
+            ->get();
+
+        return view('reports.edit', compact('report', 'matter', 'customerName'));
     }
 
     /**
