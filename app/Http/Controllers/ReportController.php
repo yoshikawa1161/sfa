@@ -80,9 +80,14 @@ class ReportController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Report $report)
+    public function update(Request $request, Report $report, Matter $matter)
     {
-        //
+
+        $form = $request->all();
+        unset($form['_token']);
+        $report->fill($form)->save();
+        $matter->fill($form)->save();
+        return redirect(route('reports.index'));
     }
 
     /**

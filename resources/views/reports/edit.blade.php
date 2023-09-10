@@ -29,7 +29,7 @@
         <div class="row">
             <label for="name" class="col-sm-2 control-label">得意先</label>
             <div class="col-sm-4 p-0">
-                <input type="text" id="name" name="name" value="{{$name->name}}" class="form-control" onchange="set_date_to();" readonly>
+                <input type="text" id="name" name="name" value="{{$name->name}}" class="form-control" onchange="set_date_to();" disabled>
 
             </div>
         </div>
@@ -56,7 +56,7 @@
             <label for="status" class="col-sm-2 control-label form-label">ステータス</label>
             <div class="col-sm-2 p-0">
                 @if($report->status==\App\Models\Report::STATUS_ORDER||$report->status==\App\Models\Report::STATUS_DELIVER)
-                <input type="text" class="form-control" value="{{$report->status_label}}" readonly>
+                <input type="text" class="form-control" value="{{$report->status_label}}" disabled>
                 <input type="hidden" name=status value="{{$report->status}}">
                 @else
                 <select class="form-control" name="status" id="status">
