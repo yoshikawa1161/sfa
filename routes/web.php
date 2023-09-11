@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/reports/{report}', [App\Http\Controllers\ReportController::class, 'destroy'])->name('reports.destroy');
     Route::get('/reports/{matter}', [App\Http\Controllers\ReportController::class, 'reports_list'])->name('reports.list');
 
+
     Route::get('/delivery_map', [App\Http\Controllers\MapController::class, 'delivery_map'])->name('maps.delivery_map');
     Route::post('/set_delivery', [App\Http\Controllers\MapController::class, 'set_delivery'])->name('maps.set_delivery');
 });

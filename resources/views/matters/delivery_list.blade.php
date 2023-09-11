@@ -28,6 +28,11 @@
                         <td>{{$matter->product_name}}</td>
                         <td>{{$matter->delivery_date}}</td>
                         <td>{{$matter->category_label}}</td>
+                        <td>
+                            <form action="{{route('reports.list',$matter)}}" method="get">
+                                <input class="btn btn-info" type="submit" value="履歴">
+                            </form>
+                        </td>
 
                         @can('delivery_list',$matter)
                         <td>

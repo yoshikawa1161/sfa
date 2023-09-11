@@ -18,6 +18,7 @@
                         <th>商談ステータス</th>
                         <th>更新区分</th>
                         <th>商品名</th>
+                        <th>日報</th>
                         <th>編集</th>
                         <th>受注確定</th>
                     </tr>
@@ -31,8 +32,12 @@
                         <td>{{$matter->status_label}}</td>
                         <td>{{$matter->category_label}}</td>
                         <td>{{$matter->product_name}}</td>
+                        <td>
+                            <form action="{{route('reports.list',$matter)}}" method="get">
+                                <input class="btn btn-info" type="submit" value="履歴">
+                            </form>
 
-
+                        </td>
                         <td>
                             <form action="{{route('matters.edit',$matter)}}" method="get">
                                 <input class="btn btn-success" type="submit" value="編集">

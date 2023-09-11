@@ -68,8 +68,16 @@
                         <a class="dropdown-item" href="{{route('matters.delivery_list')}}">納入リスト</a>
                     </div>
                 </li>
-
                 <li class="nav-item"><a class="nav-link" href="{{route('reports.index')}}">日報</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-hasapoup="true" aria-expanded="false">
+                        マップ
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{route('maps.delivery_map')}}">納入先</a>
+                    </div>
+                </li>
 
 
             </ul>
@@ -84,4 +92,4 @@
     @yield('content')
 
 </main>
-<script src="{{ asset('/js/fullcalendar.js') }}"></script>
+<script src="{{ asset('/js/main.js') }}"></script>

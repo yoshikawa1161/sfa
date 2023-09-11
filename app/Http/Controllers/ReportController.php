@@ -93,4 +93,14 @@ class ReportController extends Controller
         $report->delete();
         return redirect(route('reports.index'));
     }
+
+    public function reports_list(Report $report, Matter $matter)
+    {
+        $reports = Report::whereHas('matter', function ($query) use ($matter) {
+            $query->where('id', $matter->id);
+        })->get();
+
+        $data = ['reports' => $reports];
+        return view('reports.report_list', $data);
+    }
 }

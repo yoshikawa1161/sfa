@@ -14,11 +14,11 @@
                 <thead>
                     <tr class="bg-success">
                         <th>顧客名</th>
+                        <th>商品名</th>
                         <th>受注確定日</th>
                         <th>更新区分</th>
-                        <th>商品名</th>
                         <th>日報</th>
-                        <th>納入済み</th>
+                        <th>納入</th>
                     </tr>
                 </thead>
 
@@ -26,10 +26,14 @@
                     @foreach($matters as $matter)
                     <tr>
                         <td>{{$matter->customer->name}}</td>
+                        <td>{{$matter->product_name}}</td>
                         <td>{{$matter->order_date}}</td>
                         <td>{{$matter->category_label}}</td>
-                        <td>{{$matter->product_name}}</td>
-
+                        <td>
+                            <form action="{{route('reports.list',$matter)}}" method="get">
+                                <input class="btn btn-info" type="submit" value="履歴">
+                            </form>
+                        </td>
                         <td>
                             <form action="{{route('matters.delivery_status',$matter)}}" method="get">
                                 <input class="btn btn-warning" type="submit" onClick="return check()" value="登録">
