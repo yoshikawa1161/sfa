@@ -133,4 +133,11 @@ class MatterController extends Controller
         $data = ['matters' => $matters];
         return view('matters.delivery_list', $data);
     }
+
+    public function delivery(Matter $matter)
+    {
+        $delivery = Matter::getDelivery($matter);
+        $data = ['delivery' => $delivery];
+        return view('matters.delivery', $data);
+    }
 }

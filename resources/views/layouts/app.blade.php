@@ -38,11 +38,15 @@
 
 </head>
 
-<body>
-    <nav class="navbar navbar-expand  navbar-dark bg-dark p-0 m-0 fixed-top ">
-        <div class="collapse navbar-collapse" id="bs-navi">
-            <ul class="navbar-nav">
-                <a class="navbar-brand" href="#">営業管理システム</a>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0 m-0 fixed-top ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">営業管理システム</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         顧客
@@ -52,7 +56,6 @@
                         <a class="dropdown-item" href="{{route('customers.index')}}">顧客リスト</a>
                     </div>
                 </li>
-
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-hasapoup="true" aria-expanded="false">
@@ -68,20 +71,17 @@
 
                 <li class="nav-item"><a class="nav-link" href="{{route('reports.index')}}">日報</a></li>
 
+
+            </ul>
+            <form action="{{route('logout')}}" method="post" onsubmit="return confirm('ログアウトしますか？')">
+                <input class="btn btn-secondary" type="submit" value="ログアウト">
+                @csrf
+            </form>
         </div>
+    </div>
+</nav>
+<main class="container">
+    @yield('content')
 
-        <form action="{{route('logout')}}" method="post" onsubmit="return confirm('ログアウトしますか？')">
-            <input class="btn btn-secondary" type="submit" value="ログアウト">
-            @csrf
-        </form>
-
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item nav-link" onclick="window.history.back();"><button class="btn btn-secondary m-3" type="submit">戻る</button></li>
-        </ul>
-    </nav>
-
-    <main class="container">
-        @yield('content')
-
-    </main>
-    <script src="{{ asset('/js/main.js') }}"></script>
+</main>
+<script src="{{ asset('/js/fullcalendar.js') }}"></script>

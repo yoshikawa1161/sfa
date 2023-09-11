@@ -107,4 +107,12 @@ class Matter extends Model
     {
         return Matter::with('customer')->where('status', self::STATUS_DELIVER)->get();
     }
+
+    public static function getDelivery($matter)
+    {
+        return Matter::with('customer')->where([
+            ['id', '=', $matter->id],
+            ['status', '=', self::STATUS_DELIVER]
+        ])->get();
+    }
 }
