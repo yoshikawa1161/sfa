@@ -55,4 +55,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/delivery_map', [App\Http\Controllers\MapController::class, 'delivery_map'])->name('maps.delivery_map');
     Route::post('/set_delivery', [App\Http\Controllers\MapController::class, 'set_delivery'])->name('maps.set_delivery');
+    Route::get('/approach_map', [App\Http\Controllers\MapController::class, 'approach_map'])->name('maps.approach_map');
+    Route::post('/set_approach', [App\Http\Controllers\MapController::class, 'set_approach'])->name('maps.set_approach');
 });

@@ -20,22 +20,12 @@ jQuery(function($) {
     });
 
     $(".table").DataTable({
-      // 件数切替機能 無効
-      lengthChange: true,
-      // 検索機能 無効
-      searching: true,
-      // ソート機能 無効
-      ordering: true,
-      // 情報表示 無効
-      info: true,
-      // ページング機能 無効
-      paging: true,
-      // 1列目を昇順にする ( [ [ 列番号, 昇順降順 ], ... ] の形式)
       order: [
         [1, "asc"]
       ]
     });
   });
+  
 
   // 名刺画像プレビュー処理
     // 画像が選択される度に、この中の処理が走る

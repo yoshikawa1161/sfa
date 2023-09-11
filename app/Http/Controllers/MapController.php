@@ -19,4 +19,14 @@ class MapController extends Controller
         $data = Matter::getDeliveryList();
         return json_encode($data);
     }
+    public function approach_map()
+    {
+        return view('maps.approach_map');
+    }
+
+    public function set_approach()
+    {
+        $data = Matter::getApproachList();
+        return json_encode($data);
+    }
 }

@@ -17,6 +17,7 @@
                         <th>商品名</th>
                         <th>納入日</th>
                         <th>更新区分</th>
+                        <th>日報</th>
                     </tr>
                 </thead>
 
@@ -27,6 +28,11 @@
                         <td>{{$matter->product_name}}</td>
                         <td>{{$matter->delivery_date}}</td>
                         <td>{{$matter->category_label}}</td>
+                        <td>
+                            <form action="{{route('reports.list',$matter)}}" method="get">
+                                <input class="btn btn-info" type="submit" value="履歴">
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

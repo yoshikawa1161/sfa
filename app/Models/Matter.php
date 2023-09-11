@@ -115,4 +115,19 @@ class Matter extends Model
             ['status', '=', self::STATUS_DELIVER]
         ])->get();
     }
+
+    public static function getApproachList()
+    {
+        return Matter::with('customer')->where('status', self::STATUS_APPROACH)->where('user_id', Auth::user()->id)->get();
+    }
+
+
+    public static function getApproach($matter)
+    {
+        return Matter::with('customer')->where([
+            ['id', '=', $matter->id],
+            ['status', '=', self::STATUS_APPROACH],
+            ['user_id', '=', Auth::user()->id],
+        ])->get();
+    }
 }
