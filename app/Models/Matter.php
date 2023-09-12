@@ -130,4 +130,49 @@ class Matter extends Model
             ['user_id', '=', Auth::user()->id],
         ])->get();
     }
+
+    public static function getMeetingList()
+    {
+        return Matter::with('customer')->where('status', self::STATUS_MEETING)->where('user_id', Auth::user()->id)->get();
+    }
+
+
+    public static function getMeeting($matter)
+    {
+        return Matter::with('customer')->where([
+            ['id', '=', $matter->id],
+            ['status', '=', self::STATUS_MEETING],
+            ['user_id', '=', Auth::user()->id],
+        ])->get();
+    }
+
+    public static function getDemoList()
+    {
+        return Matter::with('customer')->where('status', self::STATUS_DEMO)->where('user_id', Auth::user()->id)->get();
+    }
+
+
+    public static function getDemo($matter)
+    {
+        return Matter::with('customer')->where([
+            ['id', '=', $matter->id],
+            ['status', '=', self::STATUS_DEMO],
+            ['user_id', '=', Auth::user()->id],
+        ])->get();
+    }
+
+    public static function getFinalMeetingList()
+    {
+        return Matter::with('customer')->where('status', self::STATUS_FINAL_MEETING)->where('user_id', Auth::user()->id)->get();
+    }
+
+
+    public static function getFinalMeeting($matter)
+    {
+        return Matter::with('customer')->where([
+            ['id', '=', $matter->id],
+            ['status', '=', self::STATUS_FINAL_MEETING],
+            ['user_id', '=', Auth::user()->id],
+        ])->get();
+    }
 }

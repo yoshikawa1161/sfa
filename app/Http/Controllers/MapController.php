@@ -29,4 +29,37 @@ class MapController extends Controller
         $data = Matter::getApproachList();
         return json_encode($data);
     }
+
+    public function meeting_map()
+    {
+        return view('maps.meeting_map');
+    }
+
+    public function set_meeting()
+    {
+        $data = Matter::getMeetingList();
+        return json_encode($data);
+    }
+
+    public function demo_map()
+    {
+        return view('maps.demo_map');
+    }
+
+    public function set_demo()
+    {
+        $data = Matter::getDemoList();
+        return json_encode($data);
+    }
+
+    public function final_meeting_map()
+    {
+        return view('maps.final_meeting_map');
+    }
+
+    public function set_final_meeting()
+    {
+        $data = Matter::getFinalMeetingList();
+        return json_encode($data);
+    }
 }

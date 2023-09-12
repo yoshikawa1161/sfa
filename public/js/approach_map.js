@@ -2,8 +2,8 @@
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { // 地図の中心を指定
-              lat: 35.6954806, // 緯度
-             lng: 139.76325010000005 // 経度
+          lat: 35.3848928, // 緯度
+          lng: 140.1852838 // 経度
           },
          zoom: 10 // 地図のズームを指定
       });

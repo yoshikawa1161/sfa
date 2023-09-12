@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row mt-20">
-        <div id="map" style="height:1000px">
+        <div id="map" style="height:800px">
         </div>
     </div>
 </div>

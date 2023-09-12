@@ -59,8 +59,8 @@
             <label for="status" class="col-sm-2 control-label form-label">ステータス</label>
             <div class="col-sm-2 p-0">
                 <select class="form-control" name="status" id="status" disabled>
-                    @foreach(\App\Models\Matter::STATUS as $key=>$val)
-                    <option value="{{$key}}" @if($matter->status==$key) selected @endif>
+                    @foreach(\App\Models\Matter::STATUSLIST as $key=>$val)
+                    <option value="{{$key}}" @if(\App\Models\Matter::STATUS_ORDER==$key) selected @endif>
                         {{$val['label']}}
                     </option>
                     @endforeach

@@ -57,4 +57,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/set_delivery', [App\Http\Controllers\MapController::class, 'set_delivery'])->name('maps.set_delivery');
     Route::get('/approach_map', [App\Http\Controllers\MapController::class, 'approach_map'])->name('maps.approach_map');
     Route::post('/set_approach', [App\Http\Controllers\MapController::class, 'set_approach'])->name('maps.set_approach');
+    Route::get('/meeting_map', [App\Http\Controllers\MapController::class, 'meeting_map'])->name('maps.meeting_map');
+    Route::post('/set_meeting', [App\Http\Controllers\MapController::class, 'set_meeting'])->name('maps.set_meeting');
+    Route::get('/demo_map', [App\Http\Controllers\MapController::class, 'demo_map'])->name('maps.demo_map');
+    Route::post('/set_demo', [App\Http\Controllers\MapController::class, 'set_demo'])->name('maps.set_demo');
+    Route::get('/final_meeting_map', [App\Http\Controllers\MapController::class, 'final_meeting_map'])->name('maps.final_meeting_map');
+    Route::post('/set_final_meeting', [App\Http\Controllers\MapController::class, 'set_final_meeting'])->name('maps.set_final_meeting');
 });

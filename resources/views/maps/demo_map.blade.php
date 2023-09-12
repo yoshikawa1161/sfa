@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row mt-0">
         <div class="col-sm-4">
-            <h2>納入</h2>
+            <h2>デモ</h2>
         </div>
     </div>
     <div class="row mt-20">
@@ -15,6 +15,6 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7fCDwZQcxJPzj89YDp22N0RnjuR0DXtU&libraries=places&callback=initMap" defer></script>
 
-<script src="{{asset('/js/delivery_map.js')}}"></script>
+<script src="{{asset('/js/demo_map.js')}}"></script>
 
 @endsection

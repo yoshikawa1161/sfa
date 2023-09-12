@@ -27,14 +27,16 @@
     <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+    <scritp src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js">
+        </script>
+        <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 
@@ -77,6 +79,9 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('maps.delivery_map')}}">納入先</a>
                         <a class="dropdown-item" href="{{route('maps.approach_map')}}">アプローチ</a>
+                        <a class="dropdown-item" href="{{route('maps.meeting_map')}}">面会</a>
+                        <a class="dropdown-item" href="{{route('maps.demo_map')}}">デモ</a>
+                        <a class="dropdown-item" href="{{route('maps.final_meeting_map')}}">最終面会</a>
                     </div>
                 </li>
 

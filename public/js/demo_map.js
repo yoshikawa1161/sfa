@@ -2,8 +2,8 @@
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), { 
         center: { // 地図の中心を指定
-              lat: 35.3848928, // 緯度
-             lng: 140.1852838 // 経度
+          lat: 35.3848928, // 緯度
+          lng: 140.1852838 // 経度
           },
          zoom: 10 // 地図のズームを指定
       });
@@ -15,7 +15,7 @@ function initMap() {
      $(function() {
        $.ajax({
          type: "POST",
-         url: "/set_delivery",
+         url: "/set_demo",
          dataType: "json",
          headers: {
            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -38,8 +38,11 @@ function initMap() {
      const marker = [];
      const infoWindow = [];
    
+     
+    
      function setMarker(data) {
       
+     
        // マーカー毎の処理
        for (var i = 0; i < data.length; i++) {
               markerLatLng = new google.maps.LatLng({lat: data[i]['customer']['lat'], lng: data[i]['customer']['lng']}); // 緯度経度のデータ作成
@@ -50,19 +53,23 @@ function initMap() {
        
            infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
                content: '<h5>'+ data[i]['customer']['name']+'</h5>' +
-                        '<div class="map"><a href="http://localhost:8000/matters/delivery/'+ 
+                        '<div class="map"><a href="http://localhost:8000/reports/'+ 
                         data[i]['id'] +'">詳細</a></div>' // 吹き出しに表示する内容
+               
              });
+       
            markerEvent(i); // マーカーにクリックイベントを追加
        }
+       
+
       }
        
       // マーカーにクリックイベントを追加
       function markerEvent(i) {
           marker[i].addListener('click', function() {// マーカーをクリックしたとき
-            infoWindow[i].open(map, marker[i]);
-            map.setZoom(15);
-            map.setCenter(new google.maps.LatLng(markerLatLng)); 
+            infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+             map.setZoom(15);
+             map.setCenter(new google.maps.LatLng(markerLatLng)); 
         });
       }
    

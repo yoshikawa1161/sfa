@@ -120,7 +120,7 @@ return [
         'phone_number' => '電話番号',
         'key_person' => 'キーマン',
         'memo' => '共有事項',
-        'product_name' => '製品名',
+        'product_name' => '商品名',
         'start' => '活動開始日',
         'end' => '活動終了日',
         'expected_order_date' => '受注予定日',
