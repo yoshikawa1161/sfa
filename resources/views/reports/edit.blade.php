@@ -21,13 +21,13 @@
         @method('patch')
         <div class="row">
             <div class="col-sm-12">
-                <h3><i class="far fa-building"></i> 得意先</h3>
+                <h3><i class="far fa-building"></i>【顧客情報】</h3>
             </div>
         </div>
         @endforeach
         @foreach($customerName as $name)
         <div class="row">
-            <label for="name" class="col-sm-2 control-label">得意先</label>
+            <label for="name" class="col-sm-2 control-label">顧客名</label>
             <div class="col-sm-4 p-0">
                 <input type="text" id="name" name="name" value="{{$name->name}}" class="form-control" onchange="set_date_to();" disabled>
 
@@ -36,7 +36,7 @@
         @endforeach
 
         <div class="row">
-            <h3><i class="far fa-calendar-alt"></i> 注文情報</h3>
+            <h3><i class="far fa-calendar-alt"></i>【注文情報】</h3>
         </div>
 
         <div class="row">
@@ -84,7 +84,7 @@
 
 
         <div class="row">
-            <h3><i class="fas fa-info-circle"></i> 商品情報</h3>
+            <h3><i class="fas fa-info-circle"></i>【商品情報】</h3>
         </div>
         <div class="row">
             <label for="puroduct_name" class="col-sm-2 control-label">商品名</label>
