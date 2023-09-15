@@ -38,10 +38,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('/matters/{matter}/delivery_date', [App\Http\Controllers\MatterController::class, 'delivery_date'])->name('matters.delivery_date');
     Route::get('/matters/delivery_list', [App\Http\Controllers\MatterController::class, 'delivery_list'])->name('matters.delivery_list');
     Route::get('/matters/delivery/{matter}', [App\Http\Controllers\MatterController::class, 'delivery'])->name('matters.delivery');
-
-    Route::patch('/matters/{matter}/delivery_cancel', [App\Http\Controllers\MatterController::class, 'delivery_cancel'])->name('matters.delivery_cancel');
-
-
     Route::get('/reports', [App\Http\Controllers\ReportController::class, 'index'])->name('reports.index');
     Route::get('/reports/matter_select', [App\Http\Controllers\ReportController::class, 'matter_select'])->name('reports.matter_select');
     Route::get('/reports/{matter}/create', [App\Http\Controllers\ReportController::class, 'create'])->name('reports.create');
