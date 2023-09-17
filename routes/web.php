@@ -60,3 +60,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/final_meeting_map', [App\Http\Controllers\MapController::class, 'final_meeting_map'])->name('maps.final_meeting_map');
     Route::post('/set_final_meeting', [App\Http\Controllers\MapController::class, 'set_final_meeting'])->name('maps.set_final_meeting');
 });
+Route::get('/guest-login', [App\Http\Controllers\CustomerController::class, 'guest'])->name('guestlogin');

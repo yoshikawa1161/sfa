@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\CustomerRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 
 class CustomerController extends Controller
@@ -13,6 +15,14 @@ class CustomerController extends Controller
     public function home()
     {
         return view('home');
+    }
+
+    public function guest()
+    {
+        $guestUserId = 1;
+        $user = User::find($guestUserId);
+        Auth::login($user);
+        return redirect()->route('home');
     }
     /**
      * Display a listing of the resource.

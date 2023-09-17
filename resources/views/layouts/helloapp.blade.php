@@ -18,6 +18,7 @@
         <div class="collapse navbar-collapse" id="bs-navi">
             <a class="navbar-brand" href="#">営業管理システム</a>
         </div>
+        <button onclick="location.href='{{route('guestlogin')}}'" class="btn btn-secondary m-4">ゲストログイン</button>
         <button onclick="location.href='{{route('login')}}'" class="btn btn-secondary m-4">ログイン</button>
         <button onclick="location.href='{{route('register')}}'" class="btn btn-secondary m-4">新規登録</button>
     </nav>
