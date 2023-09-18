@@ -140,4 +140,12 @@ class MatterController extends Controller
         $data = ['delivery' => $delivery];
         return view('matters.delivery', $data);
     }
+
+    public function delivery_cancel(Request $request, Matter $matter)
+    {
+        $matter->status = $request->status;
+        $matter->save();
+
+        return redirect(route('matters.order_list'));
+    }
 }
