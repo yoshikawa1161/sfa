@@ -72,9 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
       eventDurationEditable : false,
 
       selectLongPressDelay:0,
-
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
       events:"https://develop-sfa-70c2d1f59f9d.herokuapp.com/setReports",
- 
+
       initialView: 'dayGridMonth',
       locale: 'ja',
       height: 'auto',
