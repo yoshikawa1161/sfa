@@ -53,7 +53,7 @@ function initMap() {
        
            infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
                content: '<h5>'+ data[i]['customer']['name']+'</h5>' +
-                        '<div class="map"><a href="https://develop-sfa-70c2d1f59f9d.herokuapp.com/'+ 
+                        '<div class="map"><a href="https://develop-sfa-70c2d1f59f9d.herokuapp.com/reports/'+ 
                         data[i]['id'] +'">詳細</a></div>' // 吹き出しに表示する内容
                
              });

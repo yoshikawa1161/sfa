@@ -37,7 +37,7 @@ function initMap() {
    
      const marker = [];
      const infoWindow = [];
-   
+    const url=route('reports.list');
      
     
      function setMarker(data) {
@@ -53,8 +53,8 @@ function initMap() {
        
            infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
                content: '<h5>'+ data[i]['customer']['name']+'</h5>' +
-                        '<div class="map"><a href="https://develop-sfa-70c2d1f59f9d.herokuapp.com/'+ 
-                        data[i]['id'] +'">活動履歴</a></div>' // 吹き出しに表示する内容
+               '<div class="map"><a href="https://develop-sfa-70c2d1f59f9d.herokuapp.com/reports/'+ 
+               data[i]['id'] +'">活動履歴</a></div>' // 吹き出しに表示する内容
                
              });
        
