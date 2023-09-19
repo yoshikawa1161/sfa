@@ -62,6 +62,12 @@ jQuery(function($) {
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
   var calendar = new FullCalendar.Calendar(calendarEl, {
       defaultView: 'dayGridMonth',
       //カレンダーを月ごとに表示
@@ -72,10 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
       eventDurationEditable : false,
 
       selectLongPressDelay:0,
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
-      events:"https://develop-sfa-70c2d1f59f9d.herokuapp.com/setReports",
+      events:"/setReports",
 
       initialView: 'dayGridMonth',
       locale: 'ja',
