@@ -85,8 +85,6 @@
                         <a class="dropdown-item" href="{{route('maps.final_meeting_map')}}">最終面会</a>
                     </div>
                 </li>
-
-
             </ul>
             <form action="{{route('logout')}}" method="post" onsubmit="return confirm('ログアウトしますか？')">
                 <input class="btn btn-secondary" type="submit" value="ログアウト">

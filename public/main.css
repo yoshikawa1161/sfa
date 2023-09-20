@@ -2,6 +2,7 @@ html {
   font-size: 10px;
 }
 body {
+  margin-top: 50px !important;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
@@ -59,7 +60,6 @@ body {
 }
 
 .navbar {
-  position: relative;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
