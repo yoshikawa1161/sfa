@@ -27,15 +27,18 @@
     <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <scritp src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js">
+        <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
-    <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <?php
+        header("Access-Control-Allow-Origin: *");
+        ?>
 </head>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0 m-0 fixed-top ">

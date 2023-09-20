@@ -11,18 +11,15 @@ jQuery(function($) {
     });
 });
 
+jQuery(function($) {
 
+    $(".table").DataTable({
+      order: [
+        [1, "asc"]
+      ]
+    });
+  });
   
-  $(document).ready(function(){
-    $("table").DataTable({
-        "language":{//日本語化
-            url:"https://cdn.datatables.net/plug-ins/1.11.5/i18n/ja.json",
-        },
-        order: [
-          [1, "asc"]
-        ]
-    });//end datatables
-});
 
   // 名刺画像プレビュー処理
     // 画像が選択される度に、この中の処理が走る
