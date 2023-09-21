@@ -76,22 +76,6 @@
             </div>
 
 
-            {{-- 名刺画像 --}}
-            <div class="row mb-3">
-                <label for="name_card" class="col-sm-2 control-label">{{ __('名刺') }}</label>
-                <div class="col-sm-4 p-0">
-                    <input id="name_card" type="file" class="form-control" accept="image/*" name="name_card_image_path" onchange="setImage">
-                    <input type="hidden" name="name_card_image_path" value="{{$customer->img_path}}">
-                </div>
-            </div>
-
-
-            {{-- 名刺画像プレビュー表示 --}}
-            <div class="text-cente  h-50">
-                <img id="name_card_img_prv" name="name_card_image_path" class="img-thumbnail h-50 w-50" src="{{ Storage::url($customer->img_path) }}" alt="名刺画像はありません">
-            </div>
-
-
 
             <div class="row mt-20 mb-20">
                 <div class="col-sm-4" style="text-align: left;">

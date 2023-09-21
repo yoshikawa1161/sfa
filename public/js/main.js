@@ -12,7 +12,7 @@ jQuery(function($) {
 });
 
 jQuery(function($) {
-
+  
     $(".table").DataTable({
       order: [
         [1, "asc"]

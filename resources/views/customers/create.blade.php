@@ -78,21 +78,6 @@
         </div>
 
 
-        {{-- 名刺画像 --}}
-        <div class="row mb-3">
-            <label for="name_card" class="col-sm-2 control-label">{{ __('名刺') }}</label>
-            <div class="col-sm-4 p-0">
-                <input id="name_card" type="file" class="form-control" accept="image/*" name="name_card_image_path">
-            </div>
-        </div>
-
-
-        {{-- 名刺画像プレビュー表示 --}}
-        <div class="text-cente h-50">
-            <img id="name_card_img_prv" class="img-thumbnail h-50 w-50" alt="名刺画像はありません">
-        </div>
-
-
         <div class="row mt-20 mb-20">
             <div class="col-sm-4" style="text-align: left;">
                 <button class="btn btn-primary" type="submit">登録</button>
