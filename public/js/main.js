@@ -11,22 +11,21 @@ jQuery(function($) {
     });
 });
 
-        //customer.listテーブル以外
-        jQuery(function($) {
-          // デフォルトの設定を変更
-          $.extend($.fn.dataTable.defaults, {
-            language: {
-              url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
-            }
-          });
-      
-          $(".table").DataTable({
-            order: [
-              [1, "asc"]
-            ]
-          });
-        });
+jQuery(function($) {
+    // デフォルトの設定を変更
+    $.extend($.fn.dataTable.defaults, {
+      language: {
+        url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+      }
+    });
 
+    $(".table").DataTable({
+      order: [
+        [1, "asc"]
+      ]
+    });
+  });
+  
 
   // 名刺画像プレビュー処理
     // 画像が選択される度に、この中の処理が走る
@@ -73,8 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
       eventDurationEditable : false,
 
       selectLongPressDelay:0,
-      events:"https://develop-sfa-70c2d1f59f9d.herokuapp.com/setReports",
 
+      events:"https://develop-sfa-70c2d1f59f9d.herokuapp.com/reports/setReports",
+     headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
       initialView: 'dayGridMonth',
       locale: 'ja',
       height: 'auto',
