@@ -11,15 +11,23 @@ jQuery(function($) {
     });
 });
 
-jQuery(function($) {
-  
-    $(".table").DataTable({
-      order: [
-        [1, "asc"]
-      ]
-    });
-  });
-  
+        //customer.listテーブル以外
+        jQuery(function($) {
+          // デフォルトの設定を変更
+          $.extend($.fn.dataTable.defaults, {
+            language: {
+              url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+            }
+          });
+      
+          $(".table").DataTable({
+
+            order: [
+              [1, "asc"]
+            ]
+          });
+        });
+
 
   // 名刺画像プレビュー処理
     // 画像が選択される度に、この中の処理が走る
@@ -56,11 +64,6 @@ jQuery(function($) {
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
-  $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
       defaultView: 'dayGridMonth',
