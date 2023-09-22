@@ -16,12 +16,11 @@ jQuery(function($) {
           // デフォルトの設定を変更
           $.extend($.fn.dataTable.defaults, {
             language: {
-              url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+              url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
             }
           });
       
           $(".table").DataTable({
-
             order: [
               [1, "asc"]
             ]
@@ -64,6 +63,11 @@ jQuery(function($) {
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
       defaultView: 'dayGridMonth',
