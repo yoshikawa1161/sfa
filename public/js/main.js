@@ -61,7 +61,11 @@ jQuery(function($) {
     
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
-
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
   var calendar = new FullCalendar.Calendar(calendarEl, {
       defaultView: 'dayGridMonth',
       //カレンダーを月ごとに表示
