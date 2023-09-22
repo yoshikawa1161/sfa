@@ -19,7 +19,7 @@ class CustomerController extends Controller
 
     public function guest()
     {
-        $guestUserId = 1;
+        $guestUserId = 2;
         $user = User::find($guestUserId);
         Auth::login($user);
         return redirect()->route('home');
