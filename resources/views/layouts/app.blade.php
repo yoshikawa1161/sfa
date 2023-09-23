@@ -36,9 +36,7 @@
 
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <?php
-        header("Access-Control-Allow-Origin: *");
-        ?>
+
 </head>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0 m-0 fixed-top ">
