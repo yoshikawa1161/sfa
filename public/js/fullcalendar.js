@@ -42,13 +42,13 @@
         selectable: true,
         select: function(info){
           var first=info.startStr;
-          document.location.href="https://develop-sfa-70c2d1f59f9d.herokuapp.com/reports/matter_select/?start="+encodeURIComponent(first);
+          document.location.href="/reports/matter_select/?start="+encodeURIComponent(first);
         },
   
   
         eventClick:function(info){
           var id=info.event.id;
-          document.location.href="https://develop-sfa-70c2d1f59f9d.herokuapp.com/reports/edit/"+encodeURIComponent(id);
+          document.location.href="/reports/edit/"+encodeURIComponent(id);
   
         },
     });
