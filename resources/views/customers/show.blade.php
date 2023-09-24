@@ -19,7 +19,6 @@
                         <th>メールアドレス</th>
                         <th>キーマン</th>
                         <th>共有事項</th>
-                        <th>名刺</th>
                     </tr>
                 </thead>
 
@@ -32,7 +31,6 @@
                         <td>{{$customer->mail_address}}</td>
                         <td>{{$customer->key_person}}</td>
                         <td>{{$customer->memo}}</td>
-                        <td style="width:50px"><img src="{{ Storage::url($customer->img_path) }}" width="100%"></td>
                 </tbody>
                 </tr>
             </table>

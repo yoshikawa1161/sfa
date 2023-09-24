@@ -15,9 +15,7 @@ class ForceHttpToHttps
      */
     public function handle(Request $request, Closure $next)
     {
-        if (\App::environment(['production']) && $_SERVER["HTTP_X_FORWARDED_PROTO"] != 'https') {
-            return redirect()->secure($request->getRequestUri());
-        }
-        return $next($request);
+        if (!$this->is_ssl() && config('app.env') === 'production') {
+            return redirect('https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     }
 }
