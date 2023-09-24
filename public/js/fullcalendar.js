@@ -10,7 +10,7 @@
   
   
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        defaultView: 'dayGridMonth',
+
         //カレンダーを月ごとに表示
         editable: true,
   
