@@ -96,17 +96,6 @@ class CustomerController extends Controller
     public function update(CustomerRequest $request, Customer $customer)
     {
 
-        if (Storage::exists("/public/$request->name_card_image_path")) {
-            $name_card_image_path = $request->name_card_image_path;
-        } else {
-            if (isset($request->name_card_image_path)) {
-                $name_card_image_path = $request->name_card_image_path->store('img', 'public');
-            } else {
-                $name_card_image_path = null;
-            }
-        }
-        $customer->img_path = $name_card_image_path;
-
         $address = $request->address;
         $apiurl = "https://maps.googleapis.com/maps/api/geocode/json?address=.$address.&language=Ja&key=AIzaSyBO3NaNbHB8aa92Tut6nSxxkcQbrK8eNGI";
         $json = json_decode(@file_get_contents($apiurl), false);
