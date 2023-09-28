@@ -85,7 +85,7 @@
                 </li>
             </ul>
             <form action="{{route('logout')}}" method="post" onsubmit="return confirm('ログアウトしますか？')">
-                <input class="btn btn-secondary" type="submit" value="ログアウト">
+                <input class="btn btn-secondary m-4" type="submit" value="ログアウト">
                 @csrf
             </form>
         </div>
