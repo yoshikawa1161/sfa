@@ -2,64 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Estimate;
+use  App\Models\Estimate;
+use  App\Models\Matter;
+use  App\Models\Item;
 use Illuminate\Http\Request;
 
 class EstimateController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $estimates = Estimate::all();
+
+        return view('estimates/index', [
+            'estimates' => $estimates,
+        ]);
+    }
+    public function create(Matter $matter)
+    {
+        $data = ['matter' => $matter];
+        return view('estimates.create', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function store(Request $request, Matter $matter, Estimate $estimate)
     {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $estimate->title = $request->title;
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Estimate $estimate)
-    {
-        //
-    }
+        $items = $request->items;
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Estimate $estimate)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Estimate $estimate)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Estimate $estimate)
-    {
-        //
+        for ($i = 0; $i < count($items); $i++) {
+            $estimate->location = $items[$i]['name'];
+            $estimate->customer = $items[$i]['unit'];
+            $estimate->save();
+        }
     }
 }
